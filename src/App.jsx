@@ -39,11 +39,11 @@ const App = () => {
       />
 
       {/* Container */}
-      <div className="w-4/5 p-12 flex flex-col items-center gap-4 bg-[#111315] rounded-lg z-10">
-        <h2 className="text-3xl font-semibold text-[#FEF7EE]">
+      <div className="m-4 md:m-0 md:w-4/5 p-4 sm:p-8 md:p-12 flex flex-col items-center gap-4 bg-[#111315] rounded-lg z-10">
+        <h2 className="text-xl md:text-3xl font-semibold text-[#FEF7EE]">
           Our Collection
         </h2>
-        <p className="text-[#6F757C] w-2/4 text-center">
+        <p className="text-sm md:text-base text-[#6F757C] md:w-2/4 text-center">
           Introducing our Coffee Collection, a selection of unique coffees from
           different roast types and origins, expertly roasted in small batches
           and shipped fresh weekly.
@@ -62,7 +62,7 @@ const App = () => {
             Available Now
           </Button>
         </div>
-        <div className="mt-2 grid grid-cols-3 gap-x-8 gap-y-16">
+        <div className="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-x-8 sm:gap-y-16">
           {coffee.map((coffee, index) => {
             return <CoffeeItem data={coffee} key={index} />;
           })}
