@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import Image from "./assets/bg-cafe.jpg";
 import { Button } from "./components";
 
 const App = () => {
+  const [datas, setDatas] = useState([]);
   const [filterBy, setFilterBy] = useState("all");
+
+  useEffect(() => {
+    const getData = async () => {
+      const res = await axios(
+        "https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json"
+      );
+      const data = res.data;
+
+      setDatas(data);
+    };
+
+    getData();
+  }, []);
 
   return (
     <div className="relative min-h-screen min-w-screen flex items-center justify-center bg-[#1B1D1F]">

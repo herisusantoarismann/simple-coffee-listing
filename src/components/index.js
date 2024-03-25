@@ -1,3 +1,5 @@
 import Button from "./Button";
 
-export { Button };
+import CoffeeItem from "./coffee/Item";
+
+export { Button, CoffeeItem };
