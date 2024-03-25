@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Image from "./assets/bg-cafe.jpg";
-import { Button } from "./components";
+import { Button, CoffeeItem } from "./components";
 
 const App = () => {
   const [datas, setDatas] = useState([]);
@@ -53,7 +53,11 @@ const App = () => {
             Available Now
           </Button>
         </div>
-        <div className="mt-2"></div>
+        <div className="mt-2 grid grid-cols-3 gap-x-8 gap-y-16">
+          {datas.map((coffee, index) => {
+            return <CoffeeItem data={coffee} key={index} />;
+          })}
+        </div>
       </div>
     </div>
   );
