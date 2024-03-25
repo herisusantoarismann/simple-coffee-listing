@@ -6,6 +6,7 @@ import { Button, CoffeeItem } from "./components";
 
 const App = () => {
   const [datas, setDatas] = useState([]);
+  const [coffee, setCoffee] = useState([]);
   const [filterBy, setFilterBy] = useState("all");
 
   useEffect(() => {
@@ -20,6 +21,14 @@ const App = () => {
 
     getData();
   }, []);
+
+  useEffect(() => {
+    const data = datas.filter((item) =>
+      filterBy === "all" ? item : item.available
+    );
+
+    setCoffee(data);
+  }, [filterBy]);
 
   return (
     <div className="relative min-h-screen min-w-screen flex items-center justify-center bg-[#1B1D1F]">
@@ -54,7 +63,7 @@ const App = () => {
           </Button>
         </div>
         <div className="mt-2 grid grid-cols-3 gap-x-8 gap-y-16">
-          {datas.map((coffee, index) => {
+          {coffee.map((coffee, index) => {
             return <CoffeeItem data={coffee} key={index} />;
           })}
         </div>
