@@ -28,7 +28,7 @@ const App = () => {
     );
 
     setCoffee(data);
-  }, [filterBy]);
+  }, [filterBy, datas]);
 
   return (
     <div className="relative min-h-screen min-w-screen flex items-center justify-center bg-[#1B1D1F]">
@@ -39,7 +39,7 @@ const App = () => {
       />
 
       {/* Container */}
-      <div className="m-4 md:m-0 md:w-4/5 p-4 sm:p-8 md:p-12 flex flex-col items-center gap-4 bg-[#111315] rounded-lg z-10">
+      <div className="m-4 md:m-0 md:max-w-screen-lg p-4 sm:p-8 md:p-12 flex flex-col items-center gap-4 bg-[#111315] rounded-lg z-10">
         <h2 className="text-xl md:text-3xl font-semibold text-[#FEF7EE]">
           Our Collection
         </h2>
